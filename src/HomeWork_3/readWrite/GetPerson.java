@@ -2,9 +2,7 @@ package HomeWork_3.readWrite;
 
 import HomeWork_3.setPerson.Person;
 
-import java.io.FileInputStream;
-import java.io.IOException;
-import java.io.ObjectInputStream;
+import java.io.*;
 
 public class GetPerson {
     public static void getPerson() {
@@ -12,9 +10,9 @@ public class GetPerson {
             FileInputStream fis = new FileInputStream("person.txt");
             ObjectInputStream ois = new ObjectInputStream(fis);
 
-            Person readObject = (Person) ois.readObject();
+            Person readObj = (Person) ois.readObject();
 
-            System.out.println(readObject);
+            System.out.println(readObj);
 
             ois.close();
         } catch (IOException | ClassNotFoundException e) {

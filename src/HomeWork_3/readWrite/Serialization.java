@@ -2,9 +2,7 @@ package HomeWork_3.readWrite;
 
 import HomeWork_3.setPerson.Person;
 
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.ObjectOutputStream;
+import java.io.*;
 
 public class Serialization {
     public static void doSerialization() {

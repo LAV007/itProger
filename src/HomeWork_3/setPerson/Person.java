@@ -2,8 +2,6 @@ package HomeWork_3.setPerson;
 
 import java.io.Serializable;
 import java.util.Scanner;
-import java.util.StringJoiner;
-import java.util.stream.Stream;
 
 public class Person implements Serializable {
 
@@ -11,8 +9,6 @@ public class Person implements Serializable {
     private String login;
     private String age;
     private String hobby;
-    private String hobby2;
-    private String hobby3;
 
     public Person () {
         Scanner in = new Scanner(System.in);
@@ -22,25 +18,20 @@ public class Person implements Serializable {
         this.login = in.nextLine();
         System.out.print("Введите возраст: ");
         this.age = in.nextLine();
-        System.out.print("Введите первое хобби: ");
+        System.out.print("Введите все хобби хоббои через запятую: ");
         this.hobby = in.nextLine();
-        System.out.print("Введите второе хобби: ");
-        this.hobby2 = in.nextLine();
-        System.out.print("Введите третье хобби: ");
-        this.hobby3 = in.nextLine();
     }
 
-    public String sj(){
-        StringJoiner strJ = new StringJoiner(" " + "\n" + "\n");
-        strJ.add(hobby);
-        strJ.add(hobby2);
-        strJ.add(hobby3);
-        return strJ.toString();
+    public String str(){
+        String[] hobb = hobby.split(",");
 
+        return hobb[0].toString() + "\n" + "\n" +
+               hobb[1].toString() + "\n" + "\n" +
+               hobb[2].toString();
     }
 
     @Override
     public String toString() {
-        return "Пользователь: " + name + " с логином: " + login + '.' + " Его возраст: " + age  + '.' +  " Все хобби:  \n" + "\n" + sj();
+        return "User: " + name + " with login: " + login + '.' + " Has name: " + age  + '.' +  " All hobbies:  \n" + "\n" + str();
     }
 }
